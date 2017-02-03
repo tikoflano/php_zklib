@@ -80,7 +80,7 @@
                 $u2 = hexdec( substr($u[1], 6, 2) );
                 $uid = $u1+($u2*256);
                 $id = intval( str_replace("\0", '', hex2bin( substr($u[1], 6, 8) ) ) );
-                $state = hexdec( substr( $u[1], 56, 2 ) );
+                $state = hexdec( substr( $u[1], 66, 2 ) );
                 $timestamp = decode_time( hexdec( reverseHex( substr($u[1], 58, 8) ) ) ); 
                 
                 # Clean up some messy characters from the user name
