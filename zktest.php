@@ -7,7 +7,7 @@
 <?php
     include("zklib/zklib.php");
     
-    $zk = new ZKLib("192.168.1.201", 4370);
+    $zk = new ZKLib("172.16.0.26", 4370);
     
     $ret = $zk->connect();
     sleep(1);
@@ -107,10 +107,20 @@
             $attendance = $zk->getAttendance();
             sleep(1);
             while(list($idx, $attendancedata) = each($attendance)):
-                if ( $attendancedata[2] == 14 )
-                    $status = 'Check Out';
-                else
-                    $status = 'Check In';
+                switch ( $attendancedata[2]  ){
+					case 0:
+						$status = 'Entrada';
+						break;
+					case 1:
+						$status = 'Salida';
+						break;
+					case 2:
+						$status = 'Salida Colación';
+						break;
+					case 3:
+						$status = 'Regreso Colación';
+						break;
+				}
             ?>
             <tr>
                 <td><?php echo $idx ?></td>
