@@ -108,25 +108,25 @@
             sleep(1);
             while(list($idx, $attendancedata) = each($attendance)):
                 switch ( $attendancedata[2]  ){
-					case 0:
-						$status = 'Entrada';
-						break;
-					case 1:
-						$status = 'Salida';
-						break;
-					case 2:
-						$status = 'Salida Colación';
-						break;
-					case 3:
-						$status = 'Regreso Colación';
-						break;
-				}
+			case 0:
+				$status = 'Entrada';
+				break;
+			case 1:
+				$status = 'Salida';
+				break;
+			case 2:
+				$status = 'Salida Colación';
+				break;
+			case 3:
+				$status = 'Regreso Colación';
+				break;
+		}
             ?>
             <tr>
                 <td><?php echo $idx ?></td>
                 <td><?php echo $attendancedata[0] ?></td>
                 <td><?php echo $attendancedata[1] ?></td>
-                <td><?php echo $status ?></td>
+                <td><?php echo "({$attendancedata[2]}) $status" ?></td>
                 <td><?php echo date( "d-m-Y", strtotime( $attendancedata[3] ) ) ?></td>
                 <td><?php echo date( "H:i:s", strtotime( $attendancedata[3] ) ) ?></td>
             </tr>
