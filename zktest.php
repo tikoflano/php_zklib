@@ -126,6 +126,9 @@
 			case 5:
 				$status = 'Vuelta Break';
 				break;
+			default:
+				$status = 'No Definido';
+				break;
 		}
             ?>
             <tr>
