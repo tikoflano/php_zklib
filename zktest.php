@@ -118,7 +118,13 @@
 				$status = 'Salida Colación';
 				break;
 			case 3:
-				$status = 'Regreso Colación';
+				$status = 'Vuelta Colación';
+				break;
+			case 4:
+				$status = 'Salida Break';
+				break;
+			case 5:
+				$status = 'Vuelta Break';
 				break;
 		}
             ?>
