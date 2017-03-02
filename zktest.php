@@ -1,3 +1,5 @@
+<?php namespace Tikoflano\Zklib; ?>
+
 <html>
     <head>
         <title>ZK Test</title>
@@ -5,7 +7,7 @@
     
     <body>
 <?php
-    include("zklib/zklib.php");
+    include("src/ZKLib.php");
     
     $zk = new ZKLib("172.16.0.26", 4370);
     
